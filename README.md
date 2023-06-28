@@ -23,7 +23,7 @@ Use buttons to trigger backend events, navigate Nova routes or visit links.
 You can install this package by running the following command:
 
 ```bash
-composer require sietse85/nova-button
+composer require nchansi/nova-button
 ```
 
 To publish the config file, run the following command:
@@ -35,7 +35,7 @@ php artisan vendor:publish --tag="nova-button-config"
 ## Usage
 
 ```php
-use Sietse85\NovaButton\Button;
+use Nchansi\NovaButton\Button;
 ```
 
 ```php
@@ -102,7 +102,7 @@ If for some reason the Model for the action is not resolved correctly you can us
 
 By default, clicking the button will trigger an event via AJAX.
 
-Default event: `Sietse85\NovaButton\Events\ButtonClick`.
+Default event: `Nchansi\NovaButton\Events\ButtonClick`.
 
 The event will receive the resource model it was triggered from and the key:
 
@@ -205,7 +205,7 @@ There are 3 events and for each event you can provide the text and style:
 | `success` | `->successText('Done!')`                 | `->successStyle('success')`      |
 | `error`   | `->errorText('Something went wrong...')` | `->errorStyle('danger')`         |
 
-The defaults are defined in the [config file](https://github.com/sietse85/nova-button/blob/main/config/nova-button.php).
+The defaults are defined in the [config file](https://github.com/nchansi/nova-button/blob/main/config/nova-button.php).
 
 ### Nova routes
 
@@ -282,7 +282,7 @@ The default available classes are as follows:
 | info    | info-outline    | info-link    |
 | grey    | grey-outline    | grey-link    |
 
-The passed key refers to one of the classes defined in the [config file](https://github.com/sietse85/nova-button/blob/main/config/nova-button.php).
+The passed key refers to one of the classes defined in the [config file](https://github.com/nchansi/nova-button/blob/main/config/nova-button.php).
 You are free to change these classes or add your own.
 
 ## Examples
@@ -320,14 +320,14 @@ class UsersWithoutConfirmation extends Lens
 }
 ```
 
-Next, register a listener for the `Sietse85\NovaButton\Events\ButtonClick` event in your [EventServiceProvider](https://laravel.com/docs/7.x/events):
+Next, register a listener for the `Nchansi\NovaButton\Events\ButtonClick` event in your [EventServiceProvider](https://laravel.com/docs/7.x/events):
 
 ```php
 <?php
 
 namespace App\Listeners;
 
-use Sietse85\NovaButton\Events\ButtonClick;
+use Nchansi\NovaButton\Events\ButtonClick;
 
 class ConfirmUser
 {
@@ -355,7 +355,7 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Credits
 
-- Nova 4 package [sietse85](https://github.com/sietse85)
+- Nova 4 package [nchansi](https://github.com/nchansi)
 
 - Author of Nova 3 package: [dnwjn](https://github.com/dnwjn)
 
