@@ -136,10 +136,15 @@ export default {
       if (this.field.type === 'route') {
         const r = this.field.route;
         const base = `${Nova.appConfig.base}/resources/`;
+        const filter = `${r.params.resourceName}_filter`;
         if (r.name === 'lens') {
           Inertia.visit(`${base}${r.params.resourceName}/${r.name}/${r.params.lens}`);
         } else if (r.name === 'index') {
-          Inertia.visit(`${base}${r.params.resourceName}/`);
+          if(r.query[filter]){
+            Inertia.visit(`${base}${r.params.resourceName}?${filter}=${r.query[filter]}`);
+          }else{
+            Inertia.visit(`${base}${r.params.resourceName}/`);
+          }
         } else if (r.name === 'edit') {
           Inertia.visit(`${base}${r.params.resourceName}/${r.params.resourceId}/edit`);
         } else if (r.name === 'detail') {
